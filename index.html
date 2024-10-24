@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke API</title>
+    <link rel="stylesheet" href="./style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Carambar & Co</h1>
+    </header>
+    <div class="container">
+        <h1>Blagues Carambar</h1>
+        <button id="fetch-joke">Fetch Random Joke</button>
+        <button id="fetch-all-jokes">Fetch All Jokes</button>
+
+            <!-- Ajoute d'un input pour entrer un ID -->
+        <button id="fetch-joke-by-id">Fetch Joke by ID</button>
+        <input type="number" id="joke-id" placeholder="Enter Joke ID" />
+        
+        
+        <div id="joke-display"></div>
+        <div id="all-jokes-display"></div>
+    </div>
+
+    <script>
+        // Fetch a random joke
+        document.getElementById('fetch-joke').addEventListener('click', () => {
+            fetch('https://carambar-uhgt.onrender.com/api/v1/jokes/random')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('joke-display').innerHTML = `
+                        <h2>Random Joke:</h2>
+                        <p>${data.content}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error('Error fetching random joke:', error);
+                    document.getElementById('joke-display').innerHTML = '<p>Error fetching joke.</p>';
+                });
+        });
+
+        // Fetch all jokes
+        document.getElementById('fetch-all-jokes').addEventListener('click', () => {
+            fetch('https://carambar-uhgt.onrender.com/api/v1/jokes')
+                .then(response => response.json())
+                .then(data => {
+                    const allJokesDisplay = document.getElementById('all-jokes-display');
+                    allJokesDisplay.innerHTML = '<h2>All Jokes:</h2>';
+                    data.forEach(joke => {
+                        allJokesDisplay.innerHTML += `<p>${joke.content}</p>`;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching all jokes:', error);
+                    document.getElementById('all-jokes-display').innerHTML = '<p>Error fetching jokes.</p>';
+                });
+        });
+        // Fetch joke by Id number
+        document.getElementById('fetch-joke-by-id').addEventListener('click', () => {
+        const jokeId = document.getElementById('joke-id').value;
+        fetch(`https://carambar-uhgt.onrender.com/api/v1/jokes/${jokeId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('joke-display').innerHTML = `
+                    <h2>Joke ID ${jokeId}:</h2>
+                    <p>${data.content}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching joke by ID:', error);
+                document.getElementById('joke-display').innerHTML = '<p>Error fetching joke.</p>';
+            });
+        });
+    </script>
+</body>
+</html>

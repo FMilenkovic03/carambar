@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    background: linear-gradient(180deg, #fedb27 50%, #e3097e 50%); /* Triangle jaune à gauche, rose à droite */
+
+    display: flex; /* Utilise Flexbox */
+    flex-direction: column; /* Dispose les éléments en colonne */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+}
+
+header h1 {
+    color: #e3097e;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Exemple de police amusante */
+    font-size: 2.5rem;
+}
+
+.container {
+    max-width: 600px;
+    background: url('./assets/candy_01.png') no-repeat center center;
+    background-size: cover; 
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centre tout le contenu */
+}
+
+.container h1{
+
+    color: #e3097e; /* Couleur rose pour correspondre au thème */
+    padding: 5px;
+    width: 80%;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Exemple de police amusante */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto; /* Centre horizontalement l'élément h1 */
+
+}
+
+
+button {
+    margin: 10px auto;
+    padding: 10px 20px;
+    width: 250px; /* Largeur fixe */
+    height: 50px; /* Hauteur fixe */
+    border: none;
+    background-color: #e3097e; /* Boutons roses */
+    color: white; /* Texte blanc */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Arrondir légèrement les coins */
+    text-align: center;
+    white-space: nowrap; /* Empêche le texte de se mettre sur plusieurs lignes */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Affiche '...' si le texte est trop long */
+}
+
+button:hover {
+    background-color: #c0076d; /* Rose plus foncé au survol */
+}
+
+button:active {
+    background-color: white; /* Blanc au clic */
+    color: black; /* Texte noir au clic */
+}
+
+input[type="number"] {
+    margin: 10px 0;
+    padding: 10px;
+    width: 240px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Exemple de police amusante */
+}
+
+
+/* Style pour le titre de la blague */
+#joke-display h2 {
+    font-size: 2rem; /* Taille du titre */
+    color: #e3097e; /* Couleur rose pour correspondre au thème */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Exemple de police amusante */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet plus net */
+}
+
+/* Style pour le texte de la blague */
+#joke-display p, #all-jokes-display p {
+    font-size: 1rem; /* Taille standard du texte */
+    color: #333; /* Couleur du texte */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Exemple de police amusante */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    padding: 10px; /* Espacement autour du texte */
+    border-radius: 5px; /* Légèrement arrondi */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    margin-top: 10px; /* Espacement entre les blagues */
+    max-width: 400px; /* Limite la largeur */
+    min-height: 50px; /* Hauteur minimale */
+    text-align: center; /* Centre le texte */
+
+
+}
+
+#joke-display h2, #all-jokes-display h2 {
+    font-size: 1.5rem; /* Taille du titre */
+    color: #e3097e; /* Couleur rose pour correspondre au thème */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Centre le texte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
